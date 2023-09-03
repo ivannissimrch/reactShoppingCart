@@ -1,15 +1,16 @@
 header{
     display: flex;
-    justify-content: center;   
+    justify-content: center;  
     
-}
-
-ul {
-    /* display: flex;   
-   */
 }
 
 a{
     margin: 0 100px;
+    text-decoration: none;
 }
 
+a:hover,
+a.active{
+    color: black;
+    text-decoration: underline;
+}

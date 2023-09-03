@@ -6,9 +6,31 @@ const NavBar = () => {
     <header className={classes.navBar}>
       <nav>
         <ul>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/products">Products</NavLink>
-          <NavLink to="/Cart">Cart</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? classes.active : undefined
+            }
+            end
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              isActive ? classes.active : undefined
+            }
+          >
+            Products
+          </NavLink>
+          <NavLink
+            to="/Cart"
+            className={({ isActive }) =>
+              isActive ? classes.active : undefined
+            }
+          >
+            Cart
+          </NavLink>
         </ul>
       </nav>
     </header>
