@@ -6,7 +6,7 @@ const ErrorPage = () => {
     <Fragment>
       <NavBar />
       <main>
-        <p>An error ocurred</p>
+        <p>Page not Found</p>
       </main>
     </Fragment>
   );
