@@ -1,8 +1,25 @@
+import { useEffect, useState } from "react";
+import Card from "../componnets/Card";
+import classes from "./ProductsPage.module.css";
 const ProducstPage = () => {
-  return <div>Display a list of fake producst here</div>;
+  const [products, setProducts] = useState();
+  useEffect(() => {
+    try {
+      const getProducstData = async () => {
+        const response = await fetch("https://fakestoreapi.com/products/");
+        const data = await response.json();
+        setProducts(data);
+      };
+      getProducstData();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+  return (
+    <div className={classes["main-container"]}>
+      {!products && <h1>Loading producs</h1>}
+      {products && products.map((product) => <Card productData={product} />)}
+    </div>
+  );
 };
 export default ProducstPage;
-
-//link to get producst from API https://fakestoreapi.com/products/
-//TODO make a card coponent and display the products on that component
-//on click show the product details and an option to add to cart

@@ -5,9 +5,7 @@ const HomePage = () => {
     <div>
       HomePage
       <div>
-        <h2>
-          Go to buy my fake Products <Link to="/products">All Products</Link>
-        </h2>
+        <Link to="products">Products</Link>
       </div>
     </div>
   );

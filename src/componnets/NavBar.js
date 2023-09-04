@@ -7,7 +7,7 @@ const NavBar = () => {
       <nav>
         <ul>
           <NavLink
-            to="/"
+            to=""
             className={({ isActive }) =>
               isActive ? classes.active : undefined
             }
@@ -16,7 +16,7 @@ const NavBar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/products"
+            to="products"
             className={({ isActive }) =>
               isActive ? classes.active : undefined
             }
@@ -24,7 +24,7 @@ const NavBar = () => {
             Products
           </NavLink>
           <NavLink
-            to="/Cart"
+            to="cart"
             className={({ isActive }) =>
               isActive ? classes.active : undefined
             }
