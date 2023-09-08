@@ -1,13 +1,20 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "../componnets/Card";
 import classes from "./ProductsPage.module.css";
-const ProducstPage = () => {
+const ProducstPage = ({ updateCart }) => {
+  const handleOnClick = (product) => {
+    updateCart(product);
+  };
   const productsData = useLoaderData();
 
   return (
     <div className={classes["main-container"]}>
       {productsData.map((product) => (
-        <Card productData={product} />
+        <Card
+          productData={product}
+          onClick={() => handleOnClick(product)}
+          key={product.id}
+        />
       ))}
     </div>
   );
@@ -15,11 +22,11 @@ const ProducstPage = () => {
 export default ProducstPage;
 
 export async function loader() {
-  const response = await fetch("https://fakestoreapi.com/products/");
+  const response = await fetch("https://fakestoreapi.com/products");
   if (!response.ok) {
-    //do latter
+    //review this and use json() instead?
+    throw new Response("Error");
   } else {
-    const productsData = await response.json();
-    return productsData;
+    return response;
   }
 }
