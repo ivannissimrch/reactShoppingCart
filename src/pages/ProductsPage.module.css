@@ -1,8 +1,8 @@
 .main-container{
     display: flex;
-    gap: 5px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: rgb(129, 125, 125);
+   
 }

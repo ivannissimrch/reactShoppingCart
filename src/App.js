@@ -9,6 +9,7 @@ import { useState } from "react";
 
 function App() {
   const [productsOnCart, setProductsOnCart] = useState([]);
+  // const [totalAmount, setTotalAmount] = useState(0);
   const updateCart = (product) => {
     //add product to cart with amount of 1
     if (!productsOnCart.some((item) => item.id === product.id)) {
@@ -36,7 +37,10 @@ function App() {
           element: <ProductstPage updateCart={updateCart} />,
           loader: productsLoader,
         },
-        { path: "cart", element: <CartPage productsOnCart={productsOnCart} /> },
+        {
+          path: "cart",
+          element: <CartPage productsOnCart={productsOnCart} />,
+        },
       ],
     },
   ]);
