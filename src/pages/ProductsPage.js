@@ -1,9 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Card from "../componnets/Card";
 import classes from "./ProductsPage.module.css";
-const ProducstPage = ({ updateCart }) => {
+const ProductsPage = ({ updateCart, showProductDetails }) => {
+  const navigate = useNavigate();
   const handleOnClick = (product) => {
-    updateCart(product);
+    showProductDetails(product);
+    navigate(`${product.id}`);
   };
   const productsData = useLoaderData();
 
@@ -19,7 +21,7 @@ const ProducstPage = ({ updateCart }) => {
     </div>
   );
 };
-export default ProducstPage;
+export default ProductsPage;
 
 export async function loader() {
   const response = await fetch("https://fakestoreapi.com/products");

@@ -5,7 +5,8 @@ const HomePage = () => {
     <div>
       HomePage
       <div>
-        <Link to="products">Products</Link>
+        Display a few producst
+        <Link to="products">All Products</Link>
       </div>
     </div>
   );
