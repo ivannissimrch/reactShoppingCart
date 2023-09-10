@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import CardCart from "../componnets/CardCart";
+import classes from "./CartPage.module.css";
+
 const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
   //calculate total amount to pay
   //something is wrong with this the total amount is not wrigth
@@ -12,7 +14,7 @@ const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
   } else {
     return (
       <Fragment>
-        <div>
+        <div className={classes["cart-style"]}>
           {productsOnCart.map((product) => (
             <CardCart
               productData={product}
@@ -22,8 +24,8 @@ const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
             />
           ))}
           {`Total Amount : ${total}`}
+          <button>Buy now</button>
         </div>
-        <button>Buy now</button>
       </Fragment>
     );
   }

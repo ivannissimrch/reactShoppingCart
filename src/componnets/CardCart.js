@@ -4,13 +4,13 @@ import classes from "./Card.module.css";
 const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
   const [amount, setAmount] = useState(productData.amount);
   const handleAmountChange = (event) => {
-    setAmount(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("update amount");
-    onEditProductAmount(productData, amount);
+    if (event.target.value === "") {
+      return;
+    } else {
+      const newAmount = event.target.value;
+      setAmount(newAmount);
+      onEditProductAmount(productData, newAmount);
+    }
   };
   const handleDelete = () => {
     onDelete(productData);
@@ -23,7 +23,7 @@ const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
         <button onClick={handleDelete} name={productData.title}>
           Delete
         </button>
-        <form onSubmit={handleSubmit}>
+        <div>
           <label htmlFor="amountOFProducst"> Amount</label>
           <input
             onChange={handleAmountChange}
@@ -33,7 +33,7 @@ const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
             min={1}
             value={amount}
           />
-        </form>
+        </div>
       </div>
     </div>
   );
