@@ -4,8 +4,8 @@ import classes from "./Card.module.css";
 const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
   const [amount, setAmount] = useState(productData.amount);
   const handleAmountChange = (event) => {
-    if (event.target.value === "") {
-      return;
+    if (event.target.value === "0") {
+      onDelete(productData);
     } else {
       const newAmount = event.target.value;
       setAmount(newAmount);
@@ -30,7 +30,7 @@ const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
             name="amountOfProducts"
             type="number"
             step={1}
-            min={1}
+            min={0}
             value={amount}
           />
         </div>

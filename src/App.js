@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage, { HomeLoader } from "./pages/HomePage";
 import ProductsPage, { loader as productsLoader } from "./pages/ProductsPage";
 import CartPage from "./pages/CartPage";
 import RootLayout from "./pages/Root";
@@ -57,7 +57,11 @@ function App() {
       element: <RootLayout />,
       errorElement: <ErrorPage />,
       children: [
-        { index: true, element: <HomePage /> },
+        {
+          index: true,
+          element: <HomePage showProductDetails={showProductDetails} />,
+          loader: HomeLoader,
+        },
         {
           path: "products",
           element: <ProductsPage showProductDetails={showProductDetails} />,

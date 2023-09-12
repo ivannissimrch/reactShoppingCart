@@ -4,12 +4,11 @@ import classes from "./CartPage.module.css";
 
 const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
   //calculate total amount to pay
-  //something is wrong with this the total amount is not wrigth
   const total = productsOnCart.reduce((current, total) => {
     return current + total.price * total.amount;
   }, 0);
 
-  if (total === 0) {
+  if (total === 0 && productsOnCart.length <= 0) {
     return <h1>cart is empty</h1>;
   } else {
     return (
