@@ -12,7 +12,7 @@ const HomePage = ({ showProductDetails }) => {
 
   return (
     <div>
-      Feature Producst
+      Featured Producst
       <div className={classes["main-container"]}>
         {featureProductsData.map((product) => (
           <Card

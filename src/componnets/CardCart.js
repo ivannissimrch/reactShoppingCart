@@ -4,7 +4,7 @@ import classes from "./Card.module.css";
 const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
   const [amount, setAmount] = useState(productData.amount);
   const handleAmountChange = (event) => {
-    if (event.target.value === "0") {
+    if (event.target.value === "0" || event.target.value.includes("-")) {
       onDelete(productData);
     } else {
       const newAmount = event.target.value;
