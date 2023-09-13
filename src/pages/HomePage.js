@@ -3,12 +3,12 @@ import Card from "../componnets/Card";
 import classes from "./HomePage.module.css";
 
 const HomePage = ({ showProductDetails }) => {
-  const featureProductsData = useLoaderData();
   const navigate = useNavigate();
   const handleOnClick = (product) => {
     showProductDetails(product);
-    navigate(`products/${product.id}`);
+    navigate(`/${product.id}`);
   };
+  const featureProductsData = useLoaderData();
 
   return (
     <div>
@@ -27,13 +27,3 @@ const HomePage = ({ showProductDetails }) => {
   );
 };
 export default HomePage;
-
-export async function HomeLoader() {
-  const response = await fetch("https://fakestoreapi.com/products?limit=5");
-  if (!response.ok) {
-    //review this and use json() instead?
-    throw new Response("Error");
-  } else {
-    return response;
-  }
-}

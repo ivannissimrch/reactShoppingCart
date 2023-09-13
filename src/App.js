@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage, { HomeLoader } from "./pages/HomePage";
-import ProductsPage, { loader as productsLoader } from "./pages/ProductsPage";
+import HomePage from "./pages/HomePage";
+import productsLoader from "./helpers/productsLoader";
+import ProductsPage from "./pages/ProductsPage";
 import CartPage from "./pages/CartPage";
 import RootLayout from "./pages/Root";
 import "./App.css";
@@ -11,6 +12,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 function App() {
   const [productsOnCart, setProductsOnCart] = useState([]);
   const [productDetails, setProductDetails] = useState({});
+  const productsToShow = 5;
   const showProductDetails = (currentProduct) => {
     setProductDetails(currentProduct);
   };
@@ -60,7 +62,7 @@ function App() {
         {
           index: true,
           element: <HomePage showProductDetails={showProductDetails} />,
-          loader: HomeLoader,
+          loader: () => productsLoader(productsToShow),
         },
         {
           path: "products",
@@ -68,7 +70,7 @@ function App() {
           loader: productsLoader,
         },
         {
-          path: "products/:productId",
+          path: "/:productId",
           element: (
             <ProductDetailPage
               productDetails={productDetails}
