@@ -7,7 +7,7 @@ const HomePage = ({ showProductDetails }) => {
       <div>
         <h1>Featured products</h1>
       </div>
-      <ShowProducts showProductDetails={showProductDetails} />;
+      <ShowProducts showProductDetails={showProductDetails} />
     </Fragment>
   );
 };

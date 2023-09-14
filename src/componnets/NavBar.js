@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 import classes from "./NavBar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ productsOnCart }) => {
+  const totalProducts = productsOnCart.reduce((current, total) => {
+    return parseInt(current) + parseInt(total.amount);
+  }, 0);
   return (
     <header className={classes.navBar}>
       <nav>
@@ -30,6 +33,7 @@ const NavBar = () => {
             }
           >
             Cart
+            {totalProducts > 0 ? totalProducts : ""}
           </NavLink>
         </ul>
       </nav>

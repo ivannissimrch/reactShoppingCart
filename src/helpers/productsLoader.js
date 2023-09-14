@@ -1,4 +1,5 @@
 async function productsLoader(productsToShow) {
+  console.log(productsToShow);
   let response = null;
   if (productsToShow > 0) {
     response = await fetch(

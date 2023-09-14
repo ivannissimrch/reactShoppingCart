@@ -22,7 +22,8 @@ const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
               onEditProductAmount={editProductAmount}
             />
           ))}
-          {`Total Amount : ${total}`}
+          <div>{`Total Amount : ${total}`}</div>
+
           <button>Buy now</button>
         </div>
       </Fragment>

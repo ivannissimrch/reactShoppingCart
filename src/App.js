@@ -13,6 +13,8 @@ function App() {
   const [productsOnCart, setProductsOnCart] = useState([]);
   const [productDetails, setProductDetails] = useState({});
   const productsToShow = 5;
+  // const [amountOfProducts, setAmountOfProducts] = useState(0);
+
   const showProductDetails = (currentProduct) => {
     setProductDetails(currentProduct);
   };
@@ -50,13 +52,14 @@ function App() {
     const updatedCart = [...productsOnCart];
     updatedCart[productIndex].amount = newAmount;
     setProductsOnCart(updatedCart);
+
     //make this a function
   };
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <RootLayout />,
+      element: <RootLayout productsOnCart={productsOnCart} />,
       errorElement: <ErrorPage />,
       children: [
         {

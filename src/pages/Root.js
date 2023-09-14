@@ -2,10 +2,10 @@ import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "../componnets/NavBar";
 
-const RootLayout = () => {
+const RootLayout = ({ productsOnCart }) => {
   return (
     <Fragment>
-      <NavBar />
+      <NavBar productsOnCart={productsOnCart} />
       <Outlet />
     </Fragment>
   );
