@@ -6,7 +6,7 @@ import classes from "./HomePage.module.css";
 const HomePage = ({ showProductDetails }) => {
   return (
     <Fragment>
-      <div>
+      <div className={classes["main-container"]}>
         <img
           className={classes["hero-image"]}
           src={image}
