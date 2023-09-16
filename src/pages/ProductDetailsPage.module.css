@@ -7,7 +7,7 @@
 p{
     width: 200px;
     line-height: 1.5;
-    height: 350px;    
+    min-height: 350px;    
     overflow: hidden;
     
 }

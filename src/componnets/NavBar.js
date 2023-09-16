@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import classes from "./NavBar.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ productsOnCart }) => {
   const totalProducts = productsOnCart.reduce((current, total) => {
@@ -32,8 +34,9 @@ const NavBar = ({ productsOnCart }) => {
               isActive ? classes.active : undefined
             }
           >
+            <FontAwesomeIcon icon={faCartShopping} />
+            {` ${totalProducts > 0 ? totalProducts : ""}`}
             Cart
-            {totalProducts > 0 ? totalProducts : ""}
           </NavLink>
         </ul>
       </nav>

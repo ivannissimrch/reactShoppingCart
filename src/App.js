@@ -30,7 +30,8 @@ function App() {
         (item) => item.id === product.id
       );
       const updatedCart = [...productsOnCart];
-      updatedCart[productIndex].amount += 1;
+      updatedCart[productIndex].amount =
+        parseInt(updatedCart[productIndex].amount) + 1;
       setProductsOnCart(updatedCart);
     }
   };
