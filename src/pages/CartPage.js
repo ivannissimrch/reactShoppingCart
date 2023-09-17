@@ -1,15 +1,31 @@
 import { Fragment } from "react";
 import CardCart from "../componnets/CardCart";
 import classes from "./CartPage.module.css";
+import { useState } from "react";
 
-const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
+const CartPage = ({
+  productsOnCart,
+  deleteProduct,
+  editProductAmount,
+  resetProducts,
+}) => {
+  const [isProcessing, setIsProcessing] = useState(false);
   //calculate total amount to pay
   const total = productsOnCart.reduce((current, total) => {
     return current + total.price * total.amount;
   }, 0);
 
-  if (total === 0 && productsOnCart.length <= 0) {
-    return <h1>cart is empty</h1>;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    resetProducts([]);
+    setIsProcessing(true);
+  };
+
+  if (total === 0 && productsOnCart.length <= 0 && !isProcessing) {
+    return <h1>Cart is Empty</h1>;
+  }
+  if (isProcessing) {
+    return <h1>processing</h1>;
   } else {
     return (
       <Fragment>
@@ -23,10 +39,10 @@ const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
             />
           ))}
           <div>{`Total Amount : ${total}`}</div>
-          <form>
-            <button>Buy now</button>
-          </form>
         </div>
+        <form onSubmit={handleSubmit}>
+          <button>Buy now</button>
+        </form>
       </Fragment>
     );
   }

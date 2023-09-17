@@ -85,6 +85,7 @@ function App() {
           path: "cart",
           element: (
             <CartPage
+              resetProducts={setProductsOnCart}
               productsOnCart={productsOnCart}
               deleteProduct={deleteProduct}
               editProductAmount={editProductAmount}
