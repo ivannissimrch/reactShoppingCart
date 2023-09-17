@@ -13,8 +13,8 @@ const HomePage = ({ showProductDetails }) => {
           alt="producst on sale"
         />
         <h1>Featured products</h1>
+        <ShowProducts showProductDetails={showProductDetails} />
       </div>
-      <ShowProducts showProductDetails={showProductDetails} />
     </Fragment>
   );
 };

@@ -1,12 +1,15 @@
 header{
-    display: flex;
-    justify-content: center;  
-    
+    display: flex; 
+    justify-content: center;    
+}
+ul{
+   padding-left: 0;   
 }
 
-a{
-    margin: 0 100px;
-    text-decoration: none;
+
+a{    
+    text-decoration: none;  
+    margin: 100px; 
 }
 
 a:hover,
@@ -14,3 +17,10 @@ a.active{
     color: black;
     text-decoration: underline;
 }
+
+
+@media (max-width: 750px) {
+   a{
+    margin: 10px;
+   }
+  }

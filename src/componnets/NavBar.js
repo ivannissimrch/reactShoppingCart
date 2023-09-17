@@ -36,7 +36,6 @@ const NavBar = ({ productsOnCart }) => {
           >
             <FontAwesomeIcon icon={faCartShopping} />
             {` ${totalProducts > 0 ? totalProducts : ""}`}
-            Cart
           </NavLink>
         </ul>
       </nav>

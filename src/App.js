@@ -4,7 +4,6 @@ import productsLoader from "./helpers/productsLoader";
 import ProductsPage from "./pages/ProductsPage";
 import CartPage from "./pages/CartPage";
 import RootLayout from "./pages/Root";
-import "./App.css";
 import ErrorPage from "./pages/ErrorPage";
 import { useState } from "react";
 import ProductDetailPage from "./pages/ProductDetailPage";
