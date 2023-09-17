@@ -23,8 +23,9 @@ const CartPage = ({ productsOnCart, deleteProduct, editProductAmount }) => {
             />
           ))}
           <div>{`Total Amount : ${total}`}</div>
-
-          <button>Buy now</button>
+          <form>
+            <button>Buy now</button>
+          </form>
         </div>
       </Fragment>
     );
