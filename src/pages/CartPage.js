@@ -38,7 +38,7 @@ const CartPage = ({
               onEditProductAmount={editProductAmount}
             />
           ))}
-          <div>{`Total Amount : ${total}`}</div>
+          <div>{`Total Amount : ${total.toFixed(2)}`}</div>
         </div>
         <form onSubmit={handleSubmit}>
           <button>Buy now</button>
