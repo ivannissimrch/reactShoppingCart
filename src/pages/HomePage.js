@@ -19,3 +19,16 @@ const HomePage = () => {
   );
 };
 export default HomePage;
+
+async function featuredProductsLoader(numberOfProducst) {
+  const response = await fetch(
+    `https://fakestoreapi.com/products?limit=${numberOfProducst}`
+  );
+  if (!response.ok) {
+    throw new Response("Error");
+  } else {
+    return response;
+  }
+}
+
+export { featuredProductsLoader };

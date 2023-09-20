@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import productsLoader from "./helpers/productsLoader";
 import ProductsPage from "./pages/ProductsPage";
 import CartPage from "./pages/CartPage";
 import RootLayout from "./pages/Root";
@@ -8,10 +7,13 @@ import ErrorPage from "./pages/ErrorPage";
 import { useState } from "react";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import { productsDetailLoader } from "./pages/ProductDetailPage";
+import { featuredProductsLoader } from "./pages/HomePage";
+import { productsLoader } from "./pages/ProductsPage";
 
 function App() {
+  //store cart state
   const [productsOnCart, setProductsOnCart] = useState([]);
-  const productsToShow = 5;
+  const featuredProductsToShow = 5;
 
   //add product to cart
   const addProductToCart = (product) => {
@@ -58,7 +60,7 @@ function App() {
         {
           index: true,
           element: <HomePage />,
-          loader: () => productsLoader(productsToShow),
+          loader: () => featuredProductsLoader(featuredProductsToShow),
         },
         {
           path: "products",
