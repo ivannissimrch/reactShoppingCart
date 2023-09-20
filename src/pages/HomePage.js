@@ -3,7 +3,7 @@ import ShowProducts from "../componnets/ShowProducts";
 import image from "../images/HeroSection.jpg";
 import classes from "./HomePage.module.css";
 
-const HomePage = ({ showProductDetails }) => {
+const HomePage = () => {
   return (
     <Fragment>
       <div className={classes["main-container"]}>
@@ -13,7 +13,7 @@ const HomePage = ({ showProductDetails }) => {
           alt="producst on sale"
         />
         <h1>Featured products</h1>
-        <ShowProducts showProductDetails={showProductDetails} />
+        <ShowProducts />
       </div>
     </Fragment>
   );

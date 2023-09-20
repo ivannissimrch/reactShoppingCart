@@ -1,5 +1,5 @@
 import ShowProducts from "../componnets/ShowProducts";
-const ProductsPage = ({ showProductDetails }) => {
-  return <ShowProducts showProductDetails={showProductDetails} />;
+const ProductsPage = () => {
+  return <ShowProducts />;
 };
 export default ProductsPage;
