@@ -18,3 +18,12 @@
     max-height: 50%;  
    
 }
+
+input{
+    width: 20%;
+}
+
+.amount-container{
+    display:flex;
+    justify-content: center;
+}
