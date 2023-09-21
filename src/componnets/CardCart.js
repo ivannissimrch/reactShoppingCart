@@ -15,15 +15,14 @@ const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
 
   const handleIncreaseClick = (event) => {
     setAmount((prev) => prev + 1);
-
     onEditProductAmount(productData, amount + 1);
   };
 
   const handleAmountChange = (event) => {
-    if (event.target.value === "0" || event.target.value.includes("-")) {
+    const newAmount = parseInt(event.target.value);
+    if (newAmount === 0 || newAmount === !NaN) {
       onDelete(productData);
     } else {
-      const newAmount = event.target.value;
       setAmount(newAmount);
       onEditProductAmount(productData, newAmount);
     }
