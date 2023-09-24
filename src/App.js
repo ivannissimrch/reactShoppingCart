@@ -11,9 +11,10 @@ import { featuredProductsLoader } from "./pages/HomePage";
 import { productsLoader } from "./pages/ProductsPage";
 
 function App() {
+  const featuredProductsToShow = 5;
+
   //store cart state
   const [productsOnCart, setProductsOnCart] = useState([]);
-  const featuredProductsToShow = 5;
 
   //add product to cart
   const addProductToCart = (product) => {
@@ -42,7 +43,6 @@ function App() {
 
   //edit amount of producst
   const editProductAmount = (productToUpdate, newAmount) => {
-    //make this a function
     const productIndex = productsOnCart.findIndex(
       (item) => item.id === productToUpdate.id
     );
