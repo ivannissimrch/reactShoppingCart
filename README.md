@@ -18,7 +18,7 @@ I use three different loaders to load data on the Home, Products, and Product De
 
 I'm using state the manage the producst in the cart i have my state and funtions to update statet in on App.js
 const [productsOnCart, setProductsOnCart] = useState([]);
-I calculation the TotalAmount to pay in the cart page after producst on cart as a prop from the App.js
+I calculated the TotalAmount to pay in the cart page after producst on cart is recived as a prop from the App.js
 const total = productsOnCart.reduce((current, total) => {
 return current + total.price \* total.amount;
 }, 0);
