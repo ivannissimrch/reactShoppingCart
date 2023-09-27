@@ -13,7 +13,7 @@ const ShowProducts = () => {
       {productsData.map((product) => (
         <Card
           productData={product}
-          onClick={() => handleOnClick(product)}
+          onClick={() => handleClick(product)}
           key={product.id}
         />
       ))}

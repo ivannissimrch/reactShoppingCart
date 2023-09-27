@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import CardCart from "../componnets/CardCart";
+import CartCard from "../componnets/CartCard";
 import classes from "./CartPage.module.css";
 import { useState } from "react";
 
@@ -31,7 +31,7 @@ const CartPage = ({
       <Fragment>
         <div className={classes["cart-style"]}>
           {productsOnCart.map((product) => (
-            <CardCart
+            <CartCard
               productData={product}
               key={product.id}
               onDelete={deleteProduct}

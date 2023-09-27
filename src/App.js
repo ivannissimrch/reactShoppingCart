@@ -27,8 +27,7 @@ function App() {
         (item) => item.id === product.id
       );
       const updatedCart = [...productsOnCart];
-      updatedCart[productIndex].amount =
-        parseInt(updatedCart[productIndex].amount) + 1;
+      updatedCart[productIndex].amount = updatedCart[productIndex].amount + 1;
       setProductsOnCart(updatedCart);
     }
   };
@@ -76,10 +75,10 @@ function App() {
           path: "cart",
           element: (
             <CartPage
-              resetProducts={setProductsOnCart}
               productsOnCart={productsOnCart}
               deleteProduct={deleteProduct}
               editProductAmount={editProductAmount}
+              resetProducts={setProductsOnCart}
             />
           ),
         },

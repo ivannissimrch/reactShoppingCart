@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ productsOnCart }) => {
-  const totalProducts = productsOnCart.reduce((total, product => {
-    return parseInt(total) + parseInt(product.amount);
+  const totalProducts = productsOnCart.reduce((total, product) => {
+    return total + product.amount;
   }, 0);
   return (
     <header className={classes.navBar}>

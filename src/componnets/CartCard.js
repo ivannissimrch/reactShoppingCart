@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./Card.module.css";
 
-const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
+const CartCard = ({ productData, onDelete, onEditProductAmount }) => {
   const [amount, setAmount] = useState(productData.amount);
 
   const handleReduceClick = () => {
@@ -59,4 +59,4 @@ const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
   );
 };
 
-export default CardCart;
+export default CartCard;

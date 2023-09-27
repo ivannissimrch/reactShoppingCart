@@ -15,7 +15,7 @@ const ProductDetailPage = ({ addProductToCart }) => {
     <div className={classes.productDetails}>
       <Card productData={productData} />
       <p>{productData.description}</p>
-      <button onClick={handleOnClick}>Add to cart</button>
+      <button onClick={handleClick}>Add to cart</button>
     </div>
   );
 };
