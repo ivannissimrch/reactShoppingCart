@@ -4,7 +4,7 @@ import classes from "./ShowProducts.module.css";
 const ShowProducts = () => {
   const productsData = useLoaderData();
   const navigate = useNavigate();
-  const handleOnClick = (product) => {
+  const handleClick = (product) => {
     navigate(`/${product.id}`);
   };
 
