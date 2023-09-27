@@ -5,9 +5,9 @@ import { useState } from "react";
 
 const CartPage = ({
   productsOnCart,
-  deleteProduct,
-  editProductAmount,
-  resetProducts,
+  onDeleteProduct,
+  onEditProductAmount,
+  onResetProducts,
 }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   //calculate total amount to pay
