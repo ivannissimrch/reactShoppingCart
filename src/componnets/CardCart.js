@@ -41,7 +41,7 @@ const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
           Delete
         </button>
         <div>
-          <label htmlFor="amountOFProducst"> Amount</label>
+          <label htmlFor="amountOfProducts"> Amount</label>
           <div className={classes["amount-container"]}>
             <button onClick={handleReduceClick}>-</button>
             <input
