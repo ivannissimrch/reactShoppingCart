@@ -6,7 +6,7 @@ const ProductDetailPage = ({ addProductToCart }) => {
   const productData = useLoaderData();
 
   const navigate = useNavigate();
-  const handleOnClick = () => {
+  const handleClick = () => {
     addProductToCart(productData);
     navigate("../cart");
   };
