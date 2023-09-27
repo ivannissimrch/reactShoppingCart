@@ -20,7 +20,7 @@ const CardCart = ({ productData, onDelete, onEditProductAmount }) => {
 
   const handleAmountChange = (event) => {
     const newAmount = parseInt(event.target.value);
-    if (newAmount === 0 || newAmount === !NaN) {
+    if (newAmount === 0 || newAmount === NaN) {
       onDelete(productData);
     } else {
       setAmount(newAmount);
