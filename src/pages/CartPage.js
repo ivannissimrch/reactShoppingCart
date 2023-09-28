@@ -5,8 +5,8 @@ import { useState } from "react";
 
 const CartPage = ({
   productsOnCart,
-  deleteProduct,
-  editProductAmount,
+  onDeleteProduct,
+  onEditProductAmount,
   onResetCart,
 }) => {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -34,8 +34,8 @@ const CartPage = ({
             <CartCard
               productData={product}
               key={product.id}
-              onDelete={deleteProduct}
-              onEditProductAmount={editProductAmount}
+              onDelete={onDeleteProduct}
+              onEditProductAmount={onEditProductAmount}
             />
           ))}
           <div>{`Total Amount : ${isNaN(total) ? 0 : total.toFixed(2)}`}</div>

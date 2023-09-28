@@ -1,30 +1,25 @@
-/* eslint-disable use-isnan */
-import { useState } from "react";
 import classes from "./Card.module.css";
 
 const CartCard = ({ productData, onDelete, onEditProductAmount }) => {
-  const [amount, setAmount] = useState(productData.amount);
+  const { amount } = productData;
 
   const handleReduceClick = () => {
     if (amount <= 1) {
       onDelete(productData);
     } else {
-      setAmount((prev) => prev - 1);
       onEditProductAmount(productData, amount - 1);
     }
   };
 
   const handleIncreaseClick = (event) => {
-    setAmount((prev) => prev + 1);
     onEditProductAmount(productData, amount + 1);
   };
 
   const handleAmountChange = (event) => {
     const newAmount = parseInt(event.target.value);
-    if (newAmount === 0 || newAmount === NaN) {
+    if (newAmount === 0) {
       onDelete(productData);
     } else {
-      setAmount(newAmount);
       onEditProductAmount(productData, newAmount);
     }
   };

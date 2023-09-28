@@ -15,7 +15,7 @@ function App() {
 
   const [productsOnCart, setProductsOnCart] = useState([]);
 
-  const onAddToCart = (product) => {
+  const addProductToCart = (product) => {
     //add product to cart with amount of 1
     if (!productsOnCart.some((item) => item.id === product.id)) {
       setProductsOnCart((prev) => [...prev, { ...product, amount: 1 }]);
@@ -70,7 +70,7 @@ function App() {
         },
         {
           path: ":productId",
-          element: <ProductDetailPage onAddToCart={onAddToCart} />,
+          element: <ProductDetailPage onAddToCart={addProductToCart} />,
           loader: productsDetailLoader,
         },
         {
@@ -78,8 +78,8 @@ function App() {
           element: (
             <CartPage
               productsOnCart={productsOnCart}
-              deleteProduct={deleteProduct}
-              editProductAmount={editProductAmount}
+              onDeleteProduct={deleteProduct}
+              onEditProductAmount={editProductAmount}
               onResetCart={resetProducts}
             />
           ),
