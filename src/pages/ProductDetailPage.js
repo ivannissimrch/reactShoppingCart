@@ -2,12 +2,12 @@ import Card from "../components/Card";
 import classes from "./ProductDetailsPage.module.css";
 import { useNavigate, useLoaderData } from "react-router-dom";
 
-const ProductDetailPage = ({ addProductToCart }) => {
+const ProductDetailPage = ({ onAddToCart }) => {
   const productData = useLoaderData();
 
   const navigate = useNavigate();
   const handleClick = () => {
-    addProductToCart(productData);
+    onAddToCart(productData);
     navigate("../cart");
   };
 

@@ -7,7 +7,7 @@ const CartPage = ({
   productsOnCart,
   deleteProduct,
   editProductAmount,
-  resetProducts,
+  onResetCart,
 }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   //calculate total amount to pay
@@ -17,7 +17,7 @@ const CartPage = ({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    resetProducts([]);
+    onResetCart();
     setIsProcessing(true);
   };
 

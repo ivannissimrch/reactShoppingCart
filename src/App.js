@@ -15,7 +15,7 @@ function App() {
 
   const [productsOnCart, setProductsOnCart] = useState([]);
 
-  const addProductToCart = (product) => {
+  const onAddToCart = (product) => {
     //add product to cart with amount of 1
     if (!productsOnCart.some((item) => item.id === product.id)) {
       setProductsOnCart((prev) => [...prev, { ...product, amount: 1 }]);
@@ -48,6 +48,10 @@ function App() {
     setProductsOnCart(updatedCart);
   };
 
+  const resetProducts = () => {
+    setProductsOnCart([]);
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -66,7 +70,7 @@ function App() {
         },
         {
           path: ":productId",
-          element: <ProductDetailPage addProductToCart={addProductToCart} />,
+          element: <ProductDetailPage onAddToCart={onAddToCart} />,
           loader: productsDetailLoader,
         },
         {
@@ -76,7 +80,7 @@ function App() {
               productsOnCart={productsOnCart}
               deleteProduct={deleteProduct}
               editProductAmount={editProductAmount}
-              resetProducts={setProductsOnCart}
+              onResetCart={resetProducts}
             />
           ),
         },
