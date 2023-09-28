@@ -1,26 +1,24 @@
-header{
-    display: flex; 
-    justify-content: center;    
+header {
+  display: flex;
+  justify-content: center;
 }
-ul{
-   padding-left: 0;   
+ul {
+  padding-left: 0;
 }
 
-
-a{    
-    text-decoration: none;  
-    margin: 100px; 
+a {
+  text-decoration: none;
+  margin: 100px;
 }
 
 a:hover,
-a.active{
-    color: black;
-    text-decoration: underline;
+a.active {
+  color: black;
+  text-decoration: underline;
 }
 
-
 @media (max-width: 750px) {
-   a{
+  a {
     margin: 10px;
-   }
   }
+}

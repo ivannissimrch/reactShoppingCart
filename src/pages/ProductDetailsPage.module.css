@@ -1,12 +1,12 @@
-.productDetails{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-p{
-    width: 200px;
-    line-height: 1.5;
-    height:fit-content;    
-    overflow: hidden;    
+p {
+  width: 200px;
+  line-height: 1.5;
+  height: fit-content;
+  overflow: hidden;
 }
