@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import ShowProducts from "../componnets/ShowProducts";
+import ProductList from "../components/ProductList";
 import image from "../images/HeroSection.jpg";
 import classes from "./HomePage.module.css";
 
@@ -13,7 +13,7 @@ const HomePage = () => {
           alt="producst on sale"
         />
         <h1>Featured products</h1>
-        <ShowProducts />
+        <ProductList />
       </div>
     </Fragment>
   );

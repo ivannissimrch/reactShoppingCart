@@ -13,10 +13,8 @@ import { productsLoader } from "./pages/ProductsPage";
 function App() {
   const featuredProductsToShow = 5;
 
-  //store cart state
   const [productsOnCart, setProductsOnCart] = useState([]);
 
-  //add product to cart
   const addProductToCart = (product) => {
     //add product to cart with amount of 1
     if (!productsOnCart.some((item) => item.id === product.id)) {

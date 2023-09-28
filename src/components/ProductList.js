@@ -1,7 +1,8 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
-import Card from "../componnets/Card";
-import classes from "./ShowProducts.module.css";
-const ShowProducts = () => {
+import Card from "./Card";
+import classes from "./ProductList.module.css";
+
+const ProductList = () => {
   const productsData = useLoaderData();
   const navigate = useNavigate();
   const handleClick = (product) => {
@@ -21,4 +22,4 @@ const ShowProducts = () => {
   );
 };
 
-export default ShowProducts;
+export default ProductList;

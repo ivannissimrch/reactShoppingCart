@@ -1,18 +1,18 @@
 import { Fragment } from "react";
-import CartCard from "../componnets/CartCard";
+import CartCard from "../components/CartCard";
 import classes from "./CartPage.module.css";
 import { useState } from "react";
 
 const CartPage = ({
   productsOnCart,
-  onDeleteProduct,
-  onEditProductAmount,
-  onResetProducts,
+  deleteProduct,
+  editProductAmount,
+  resetProducts,
 }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   //calculate total amount to pay
-  const total = productsOnCart.reduce((current, total) => {
-    return current + total.price * total.amount;
+  const total = productsOnCart.reduce((total, current) => {
+    return total + current.price * current.amount;
   }, 0);
 
   const handleSubmit = (event) => {
@@ -38,7 +38,7 @@ const CartPage = ({
               onEditProductAmount={editProductAmount}
             />
           ))}
-          <div>{`Total Amount : ${total.toFixed(2)}`}</div>
+          <div>{`Total Amount : ${isNaN(total) ? 0 : total.toFixed(2)}`}</div>
         </div>
         <form onSubmit={handleSubmit}>
           <button>Buy now</button>

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import NavBar from "../componnets/NavBar";
+import NavBar from "../components/NavBar";
 
 const ErrorPage = () => {
   return (

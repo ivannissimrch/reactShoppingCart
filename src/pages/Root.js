@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../componnets/NavBar";
+import NavBar from "../components/NavBar";
 import { Fragment } from "react";
 
 const RootLayout = ({ productsOnCart }) => {

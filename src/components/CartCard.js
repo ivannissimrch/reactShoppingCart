@@ -1,3 +1,4 @@
+/* eslint-disable use-isnan */
 import { useState } from "react";
 import classes from "./Card.module.css";
 

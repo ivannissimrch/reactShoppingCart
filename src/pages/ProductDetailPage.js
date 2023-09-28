@@ -1,4 +1,4 @@
-import Card from "../componnets/Card";
+import Card from "../components/Card";
 import classes from "./ProductDetailsPage.module.css";
 import { useNavigate, useLoaderData } from "react-router-dom";
 
