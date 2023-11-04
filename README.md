@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Shopping Cart Project for the Odin Project Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Project description link: https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart
 
-## Available Scripts
+- Live Site Link: https://ephemeral-narwhal-478443.netlify.app/
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+The primary purpose of this project was to gain experience using the react-router library.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+!['Home page'](/src/images/home.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+!['Products page'](/src/images/producst.png)
 
-### `npm test`
+## Project Implementation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My website has four pages: Home, Products, Cart, and Product Details. The first three pages are always displayed, but the Product Details page only shows when a specific product is selected. From there, I can add the chosen product to my cart and proceed to the Cart page.
 
-### `npm run build`
+I use three loaders to load data on the Home, Products, and Product Details pages. Each loader function is included in the same file as the page that uses it. Initially, I used one function as a loader for all three pages, but I found it easier to read and manage with three separate loaders.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I'm using the **'useState'** hook to manage the products in the cart. I have my state and functions to update state in on **'App.js'**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`const [productsOnCart, setProductsOnCart] = useState([]);`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I calculated the total amount to pay on the cart page after products are received in the cart as a prop from **'App.js'**
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`const total = productsOnCart.reduce((current, total) => {
+return current + total.price \* total.amount;
+}, 0);`
