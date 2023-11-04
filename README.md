@@ -22,7 +22,7 @@ I'm using the **'useState'** hook to manage the products in the cart. I have my 
 
 `const [productsOnCart, setProductsOnCart] = useState([]);`
 
-I calculated the total amount to pay on the cart page after products are received in the cart as a prop from **'App.js'**
+I calculated the total amount to pay on the cart page after products are received in the cart as a prop from **'App.js'**.
 
 `const total = productsOnCart.reduce((current, total) => {
 return current + total.price \* total.amount;

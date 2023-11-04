@@ -23,4 +23,19 @@ input {
 .amount-container {
   display: flex;
   justify-content: center;
+  gap: 2px;
+}
+
+.deleteBtn {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+.changeAmountBtn {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 28px;
 }
