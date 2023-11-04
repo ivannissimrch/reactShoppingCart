@@ -12,10 +12,14 @@ const ProductDetailPage = ({ onAddToCart }) => {
   };
 
   return (
-    <div className={classes.productDetails}>
-      <Card productData={productData} />
-      <p>{productData.description}</p>
-      <button onClick={handleClick}>Add to cart</button>
+    <div className={classes.mainContainer}>
+      <main className={classes.cardContainer}>
+        <Card productData={productData} />
+        <p>{productData.description}</p>
+      </main>
+      <button className={classes.btn} onClick={handleClick}>
+        Add to cart
+      </button>
     </div>
   );
 };

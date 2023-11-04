@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  background-color: rgb(41, 39, 39);
+}
+
+footer > * {
+  background-color: rgb(75, 70, 70);
+  border-radius: 28px;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 28px;
+  color: white;
+}

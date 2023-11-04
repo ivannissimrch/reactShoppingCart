@@ -8,7 +8,7 @@ const NavBar = ({ productsOnCart }) => {
     return total + product.amount;
   }, 0);
   return (
-    <header className={classes.navBar}>
+    <header className={classes.NavBar}>
       <nav>
         <ul>
           <NavLink
