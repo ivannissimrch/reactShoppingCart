@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(230, 230, 230);
   max-width: 1200px;
   margin: 20px auto;
+  padding: 20px;
 }
 
 .btn {
