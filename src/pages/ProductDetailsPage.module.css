@@ -37,5 +37,15 @@ p {
   .cardContainer {
     flex-direction: column;
     gap: 0;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    padding: 10px;
+  }
+
+  p {
+    margin-top: 0;
+    width: 320px;
+    padding: 0 20px;
   }
 }

@@ -39,3 +39,9 @@ input {
   width: 30px;
   border-radius: 28px;
 }
+
+@media (max-width: 750px) {
+  .card-container {
+    width: 320px;
+  }
+}
