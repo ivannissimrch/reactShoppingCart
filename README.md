@@ -10,7 +10,7 @@ The primary purpose of this project was to gain experience using the react-route
 
 !['Home page'](/src/images/home.png)
 
-!['Products page'](/src/images/producst.png)
+!['Products page'](/src/images/products.png)
 
 ## Project Implementation
 
