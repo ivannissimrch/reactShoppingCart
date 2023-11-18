@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import { Fragment } from "react";
 import Footer from "../components/Footer";
+import classes from "./Root.module.css";
 
 const RootLayout = ({ productsOnCart }) => {
   return (
-    <Fragment>
+    <main className={classes["main-container"]}>
       <NavBar productsOnCart={productsOnCart} />
-      <Outlet />
+      <section className={classes["section-container"]}>
+        <Outlet />
+      </section>
+
       <Footer />
-    </Fragment>
+    </main>
   );
 };
 export default RootLayout;

@@ -1,10 +1,11 @@
+import { Fragment } from "react";
 import ProductList from "../components/ProductList";
 import image from "../images/HeroSection.jpg";
 import classes from "./HomePage.module.css";
 
 const HomePage = () => {
   return (
-    <div className={classes["main-container"]}>
+    <Fragment>
       <img
         className={classes["hero-image"]}
         src={image}
@@ -12,7 +13,7 @@ const HomePage = () => {
       />
       <h1>Featured products</h1>
       <ProductList />
-    </div>
+    </Fragment>
   );
 };
 export default HomePage;

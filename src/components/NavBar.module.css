@@ -19,7 +19,7 @@ a.active {
   text-decoration: underline;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 760px) {
   a {
     margin: 10px;
   }

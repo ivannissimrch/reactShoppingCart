@@ -1,18 +1,22 @@
 .main-container {
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  justify-content: center;
+  justify-content: stretch;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 1200px;
   background-color: rgb(230, 230, 230);
-  padding: 50px 50px;
-  margin: 50px 0;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
 }
 
-@media (max-width: 750px) {
+@media (min-width: 760px) {
   .main-container {
-    padding: 10px;
-    margin: 10px 0;
+    padding: 50px 50px;
+    margin: 50px 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
   }
 }

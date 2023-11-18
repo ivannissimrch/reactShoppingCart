@@ -1,11 +1,7 @@
 import ProductList from "../components/ProductList";
-import classes from "./ProductsPage.module.css";
+
 const ProductsPage = () => {
-  return (
-    <main className={classes["main-container"]}>
-      <ProductList />
-    </main>
-  );
+  return <ProductList />;
 };
 export default ProductsPage;
 
